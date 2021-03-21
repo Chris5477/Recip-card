@@ -1,1 +1,3 @@
-Réalisation d'une carte recette (2 heures)
+Modification de l'animation de présentation de la carte 
+Animation de dépliage => travail en progrès
+ajustement des informations 

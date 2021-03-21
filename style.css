@@ -1,15 +1,18 @@
 body{
     margin: 0%;
     padding: 0%;
-    background-color: rgba(54, 53, 53, 0.507);
+    background-color: rgba(54, 52, 52, 0.432);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "lato";
+    
 }
 
 
 #container{
+    opacity: 0;
     background-color:rgba(252, 243, 215, 0.897);
     width: 1000px;
     height: 600px;
@@ -19,19 +22,24 @@ body{
     grid-template-rows: repeat(auto-fill, 20px);
     border: 2px solid black;
     border-radius: 10px;
-    box-shadow: 0px 5px 10px black;
-    animation: sheetTurn 10s ease 1 ;
+    box-shadow: 0px 5px 15px black;
+    animation: sheetTurn 5s ease 1s 1 forwards;
 }
 
 @keyframes sheetTurn{
-    from{
-        transform: rotateY(-90deg);
+    0%{
+        opacity: 1;
+        clip-path:polygon(99% 0%, 50% 10%, 100% 0%, 100% 100%, 50% 90%, 100% 99%); 
     }
 
-    to{
-        transform: rotateY(0deg);
+    50%{opacity: 1;
+        clip-path:polygon(0% 0%, 50% 1%, 100% 0%, 100% 100%, 50% 99%, 0% 100%);
     }
+
+    100%{opacity: 1;
+        clip-path:polygon(0% 0%, 50% 0%, 100% 0%, 100% 105%, 50% 105%, 0% 105%);} 
 }
+
 
 .num_recip{
     grid-area: 1/1/4/4;
@@ -56,9 +64,9 @@ body{
     grid-area: 9/1/18/25;
     color: black;
     font-size: 85px;
-    font-weight: 100;
+    font-weight: smaller;
     line-height: 80px;
-    font-family: 'Lato', sans-serif;
+    font-family:serif; 
 }
 
 .description{
@@ -76,6 +84,7 @@ body{
 
 .undefined::before{
     content:"--------------------------------------------------------";
+    color: grey;
     letter-spacing: -2px;
     margin-right: 20px;
 }
